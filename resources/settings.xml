@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <!-- API Settings -->
+    <category label="30100">
+        <setting label="30101" type="lsep"/>
+        <setting id="api_backend" type="select" label="30102" default="local" lvalues="30103|30104">
+            <level>0</level>
+        </setting>
+        <setting id="enable_api_fallback" type="bool" label="30105" default="true">
+            <level>0</level>
+        </setting>
+        
+        <setting label="30110" type="lsep"/>
+        <setting id="innertube_client" type="select" label="30111" default="web" values="web|mweb|android|ios" visible="eq(-2,local)">
+            <level>1</level>
+        </setting>
+        
+        <setting label="30120" type="lsep"/>
+        <setting id="invidious_instance" type="text" label="30121" default="" visible="eq(-4,invidious)">
+            <level>1</level>
+        </setting>
+        <setting id="invidious_auto_find" type="action" label="30122" action="RunPlugin(plugin://plugin.video.freetube/?action=find_invidious_instance)" visible="eq(-5,invidious)">
+            <level>1</level>
+        </setting>
+    </category>
+    
+    <!-- Content Settings -->
+    <category label="30200">
+        <setting label="30201" type="lsep"/>
+        <setting id="content_language" type="text" label="30202" default="en">
+            <level>0</level>
+        </setting>
+        <setting id="content_region" type="text" label="30203" default="US">
+            <level>0</level>
+        </setting>
+        
+        <setting label="30210" type="lsep"/>
+        <setting id="video_quality" type="select" label="30211" default="best" lvalues="30212|30213|30214|30215|30216">
+            <level>0</level>
+        </setting>
+        <setting id="ask_quality" type="bool" label="30217" default="false">
+            <level>0</level>
+        </setting>
+    </category>
+    
+    <!-- Privacy Settings -->
+    <category label="30300">
+        <setting label="30301" type="lsep"/>
+        <setting id="enable_watch_history" type="bool" label="30302" default="true">
+            <level>0</level>
+        </setting>
+        <setting id="enable_search_history" type="bool" label="30303" default="true">
+            <level>0</level>
+        </setting>
+        
+        <setting label="30310" type="lsep"/>
+        <setting id="enable_auto_cleanup" type="bool" label="30311" default="false">
+            <level>1</level>
+        </setting>
+        <setting id="history_cleanup_days" type="number" label="30312" default="90" visible="eq(-1,true)">
+            <level>1</level>
+        </setting>
+        <setting id="search_cleanup_days" type="number" label="30313" default="30" visible="eq(-2,true)">
+            <level>1</level>
+        </setting>
+        
+        <setting label="30320" type="lsep"/>
+        <setting id="clear_history" type="action" label="30321" action="RunPlugin(plugin://plugin.video.freetube/?action=clear_history)">
+            <level>0</level>
+        </setting>
+        <setting id="clear_search_history" type="action" label="30322" action="RunPlugin(plugin://plugin.video.freetube/?action=clear_search_history)">
+            <level>0</level>
+        </setting>
+        <setting id="clear_all_data" type="action" label="30323" action="RunPlugin(plugin://plugin.video.freetube/?action=clear_all_data)">
+            <level>0</level>
+        </setting>
+    </category>
+    
+    <!-- Subscriptions Settings -->
+    <category label="30400">
+        <setting label="30401" type="lsep"/>
+        <setting id="subscription_sort" type="select" label="30402" default="name" lvalues="30403|30404">
+            <level>0</level>
+        </setting>
+        
+        <setting label="30410" type="lsep"/>
+        <setting id="import_subscriptions" type="action" label="30411" action="RunPlugin(plugin://plugin.video.freetube/?action=import_subscriptions)">
+            <level>0</level>
+        </setting>
+        <setting id="export_subscriptions" type="action" label="30412" action="RunPlugin(plugin://plugin.video.freetube/?action=export_subscriptions)">
+            <level>0</level>
+        </setting>
+        
+        <setting label="30420" type="lsep"/>
+        <setting id="export_format" type="select" label="30421" default="freetube" lvalues="30422|30423|30424|30425">
+            <level>1</level>
+        </setting>
+    </category>
+    
+    <!-- SponsorBlock Settings -->
+    <category label="30500">
+        <setting label="30501" type="lsep"/>
+        <setting id="enable_sponsorblock" type="bool" label="30502" default="false">
+            <level>0</level>
+        </setting>
+        <setting id="sponsorblock_api_url" type="text" label="30503" default="https://sponsor.ajay.app" visible="eq(-1,true)">
+            <level>2</level>
+        </setting>
+        
+        <setting label="30510" type="lsep" visible="eq(-2,true)"/>
+        <setting id="sb_skip_sponsor" type="bool" label="30511" default="true" visible="eq(-3,true)">
+            <level>0</level>
+        </setting>
+        <setting id="sb_skip_intro" type="bool" label="30512" default="true" visible="eq(-4,true)">
+            <level>0</level>
+        </setting>
+        <setting id="sb_skip_outro" type="bool" label="30513" default="true" visible="eq(-5,true)">
+            <level>0</level>
+        </setting>
+        <setting id="sb_skip_selfpromo" type="bool" label="30514" default="false" visible="eq(-6,true)">
+            <level>0</level>
+        </setting>
+        <setting id="sb_skip_interaction" type="bool" label="30515" default="false" visible="eq(-7,true)">
+            <level>0</level>
+        </setting>
+        <setting id="sb_skip_preview" type="bool" label="30516" default="false" visible="eq(-8,true)">
+            <level>0</level>
+        </setting>
+    </category>
+    
+    <!-- DeArrow Settings -->
+    <category label="30600">
+        <setting label="30601" type="lsep"/>
+        <setting id="enable_dearrow" type="bool" label="30602" default="false">
+            <level>0</level>
+        </setting>
+        <setting id="dearrow_api_url" type="text" label="30603" default="https://dearrow-thumb.ajay.app" visible="eq(-1,true)">
+            <level>2</level>
+        </setting>
+        
+        <setting label="30610" type="lsep" visible="eq(-2,true)"/>
+        <setting id="dearrow_titles" type="bool" label="30611" default="true" visible="eq(-3,true)">
+            <level>0</level>
+        </setting>
+        <setting id="dearrow_thumbnails" type="bool" label="30612" default="true" visible="eq(-4,true)">
+            <level>0</level>
+        </setting>
+    </category>
+    
+    <!-- Profile Settings -->
+    <category label="30700">
+        <setting label="30701" type="lsep"/>
+        <setting id="manage_profiles" type="action" label="30702" action="RunPlugin(plugin://plugin.video.freetube/?action=manage_profiles)">
+            <level>0</level>
+        </setting>
+        <setting id="create_profile" type="action" label="30703" action="RunPlugin(plugin://plugin.video.freetube/?action=create_profile)">
+            <level>0</level>
+        </setting>
+        <setting id="switch_profile" type="action" label="30704" action="RunPlugin(plugin://plugin.video.freetube/?action=switch_profile)">
+            <level>0</level>
+        </setting>
+    </category>
+    
+    <!-- Advanced Settings -->
+    <category label="30800">
+        <setting label="30801" type="lsep"/>
+        <setting id="enable_debug_log" type="bool" label="30802" default="false">
+            <level>2</level>
+        </setting>
+        <setting id="cache_ttl" type="number" label="30803" default="3600">
+            <level>2</level>
+        </setting>
+        
+        <setting label="30810" type="lsep"/>
+        <setting id="export_all_data" type="action" label="30811" action="RunPlugin(plugin://plugin.video.freetube/?action=export_all_data)">
+            <level>1</level>
+        </setting>
+        <setting id="import_all_data" type="action" label="30812" action="RunPlugin(plugin://plugin.video.freetube/?action=import_all_data)">
+            <level>1</level>
+        </setting>
+    </category>
+    
+    <!-- About -->
+    <category label="30900">
+        <setting label="30901" type="lsep"/>
+        <setting id="about_version" type="text" label="30902" default="1.0.0" enable="false">
+            <level>0</level>
+        </setting>
+        <setting id="about_license" type="text" label="30903" default="AGPL-3.0-or-later" enable="false">
+            <level>0</level>
+        </setting>
+        <setting label="30910" type="lsep"/>
+        <setting id="about_freetube" type="action" label="30911" action="RunPlugin(plugin://plugin.video.freetube/?action=about)">
+            <level>0</level>
+        </setting>
+    </category>
+</settings>
+

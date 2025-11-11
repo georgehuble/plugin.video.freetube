@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.freetube" name="FreeTube for Kodi" version="1.0.0" provider-name="FreeTube Kodi Team">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.27.1"/>
+        <import addon="script.module.inputstreamhelper" version="0.6.0" optional="true"/>
+        <import addon="inputstream.adaptive" version="19.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/plugin.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point="xbmc.addon.metadata">
+        <assets>
+            <icon>resources/media/icon.png</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+        </assets>
+        <platform>all</platform>
+        <license>AGPL-3.0-or-later</license>
+        <website>https://github.com/FreeTubeApp/FreeTube</website>
+        <source>https://github.com/yourusername/plugin.video.freetube</source>
+        <summary lang="en_GB">Watch YouTube privately with FreeTube functionality</summary>
+        <summary lang="ru_RU">Просмотр YouTube приватно с функциональностью FreeTube</summary>
+        <description lang="en_GB">FreeTube for Kodi - Watch YouTube without Google account. Subscribe to channels, save history, manage playlists - all stored locally. Includes SponsorBlock, DeArrow support, and Invidious fallback for maximum privacy.</description>
+        <description lang="ru_RU">FreeTube для Kodi - Смотрите YouTube без аккаунта Google. Подписывайтесь на каналы, сохраняйте историю, управляйте плейлистами - всё хранится локально. Включает поддержку SponsorBlock, DeArrow и Invidious для максимальной приватности.</description>
+        <disclaimer lang="en_GB">This plugin is not affiliated with or endorsed by YouTube, Google, or FreeTube</disclaimer>
+        <disclaimer lang="ru_RU">Этот плагин не связан и не одобрен YouTube, Google или FreeTube</disclaimer>
+        <news>
+v1.0.0 (2025-11-11)
+- Initial release
+- Full YouTube access without authentication
+- Local subscriptions management
+- Local history and playlists
+- Profile support
+- Invidious API fallback
+- SponsorBlock integration
+- DeArrow support
+- Import/Export subscriptions
+        </news>
+    </extension>
+</addon>
+

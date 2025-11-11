@@ -1,0 +1,18 @@
+v1.0.0 (2025-11-11)
+- Initial release
+- Full YouTube access without Google authentication
+- Local subscriptions management (no account needed)
+- Local watch history tracking
+- Local playlists creation and management
+- Multiple user profiles support
+- Invidious API fallback for maximum reliability
+- SponsorBlock integration for ad-free viewing
+- DeArrow support for better titles/thumbnails
+- Import subscriptions from YouTube CSV, FreeTube DB, NewPipe JSON, OPML
+- Export subscriptions to various formats
+- Search with history
+- Trending videos
+- Channel browsing
+- Video playback with quality selection
+- Privacy-first design - no tracking, no Google login required
+
